@@ -1,0 +1,1 @@
+export const INTRO_SCRIPT = `(function(){try{var reduce=window.matchMedia("(prefers-reduced-motion: reduce)").matches;if(reduce||sessionStorage.getItem("les-intro")==="1"){document.documentElement.dataset.intro="done";}}catch(e){}})();`;

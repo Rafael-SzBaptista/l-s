@@ -1,0 +1,393 @@
+@import "tailwindcss";
+
+:root {
+  --surface: #0a0a0a;
+  --surface-raised: #141414;
+  --text: #f1eee8;
+  --muted: #a39e96;
+  --line: rgba(241, 238, 232, 0.12);
+  --accent: #c6a15b;
+  --accent-fg: #141210;
+  --announce-h: 2.25rem;
+  --header-h: 4.5rem;
+  --top-h: calc(var(--announce-h) + var(--header-h));
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.76, 0, 0.24, 1);
+  --ease-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@theme inline {
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+  --font-display: var(--font-archivo), "Arial Narrow", sans-serif;
+  --font-script: var(--font-pinyon), cursive;
+  --color-surface: var(--surface);
+  --color-raised: var(--surface-raised);
+  --color-ink: var(--text);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-accent: var(--accent);
+  --color-accent-fg: var(--accent-fg);
+}
+
+@utility font-wide {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-variation-settings: "wdth" 125;
+  letter-spacing: -0.045em;
+  line-height: 0.84;
+  text-transform: uppercase;
+}
+
+@utility font-script {
+  font-family: var(--font-script);
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0;
+  line-height: 0.8;
+  text-transform: none;
+}
+
+@utility eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  line-height: 1;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+@utility no-scrollbar {
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+html {
+  background: var(--surface);
+  color: var(--text);
+  scroll-behavior: auto;
+  /* Barra sempre reservada: escondê-la na splash alargava a página em ~15px no Windows. */
+  overflow-y: scroll;
+}
+
+html:not([data-intro="done"]):not([data-intro="exit"]) body {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100svh;
+  overflow: hidden;
+}
+
+body {
+  background: var(--surface);
+  color: var(--text);
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--accent-fg);
+}
+
+button,
+summary {
+  cursor: pointer;
+}
+
+summary {
+  list-style: none;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+[id] {
+  scroll-margin-top: calc(var(--header-h) + 1.5rem);
+}
+
+.campaign-photo {
+  filter: contrast(1.05) saturate(0.9);
+}
+
+.grain {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  pointer-events: none;
+  opacity: 0.045;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 180px 180px;
+}
+
+.intro-layer {
+  display: flex;
+  clip-path: inset(0 0 0% 0);
+}
+
+.intro-layer.is-leaving {
+  animation: intro-curtain 0.95s cubic-bezier(0.22, 1, 0.36, 1) both;
+  will-change: clip-path;
+}
+
+@keyframes intro-curtain {
+  from {
+    clip-path: inset(0 0 0% 0);
+  }
+  to {
+    clip-path: inset(0 0 100% 0);
+  }
+}
+
+html[data-intro="done"] .intro-layer {
+  display: none;
+}
+
+.link-line {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  background-size: 0 1px;
+  transition: background-size 0.5s var(--ease-out);
+}
+
+.group:hover .link-line,
+.link-line:hover {
+  background-size: 100% 1px;
+}
+
+/*
+ * O topo anima por `top`, igual à barra .sticky-under-header: as duas
+ * transições andam no mesmo quadro. Com transform no topo e top na barra,
+ * elas dessincronizavam e abria uma fresta piscando entre as duas.
+ */
+.site-top {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 50;
+  transition: top 0.7s var(--ease-out);
+}
+
+.site-top[data-scrolled="true"] {
+  top: calc(var(--announce-h) * -1);
+}
+
+.site-top[data-hidden="true"] {
+  top: calc(var(--top-h) * -1);
+}
+
+.announce,
+.site-header {
+  background: rgba(10, 10, 10, 0.92);
+}
+
+/* Altura exata: o conteúdo dava 35,88px e sobrava 0,12px de fresta. */
+.announce {
+  box-sizing: border-box;
+  height: var(--announce-h);
+}
+
+.site-header {
+  height: var(--header-h);
+}
+
+.site-top[data-overlay="true"]:not([data-scrolled="true"]) .announce,
+.site-top[data-overlay="true"]:not([data-scrolled="true"]) .site-header {
+  background: transparent;
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 32s linear infinite;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* 1px por baixo do topo (z-index maior), para nunca sobrar fresta. */
+.sticky-under-header {
+  position: sticky;
+  top: calc(var(--top-h) - 1px);
+  z-index: 30;
+  transition: top 0.7s var(--ease-out);
+}
+
+.site-top[data-scrolled="true"] ~ main .sticky-under-header {
+  top: calc(var(--header-h) - 1px);
+}
+
+.site-top[data-hidden="true"] ~ main .sticky-under-header {
+  top: 0;
+}
+
+@keyframes kenburns {
+  from {
+    transform: scale(1.12);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.animate-kenburns {
+  animation: kenburns 9s var(--ease-out) forwards;
+}
+
+@keyframes load {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+.hero-progress {
+  transform-origin: left center;
+  animation: load 7s linear forwards;
+}
+
+.hero-paused .hero-progress {
+  animation-play-state: paused;
+}
+
+.acc-icon {
+  transition: transform 0.55s var(--ease-out);
+}
+
+details[open] .acc-icon {
+  transform: rotate(45deg);
+}
+
+details {
+  interpolate-size: allow-keywords;
+}
+
+.acc-body {
+  overflow: hidden;
+  block-size: 0;
+  transition: block-size 0.55s var(--ease-out);
+}
+
+details[open] .acc-body {
+  block-size: auto;
+}
+
+/* Cards entram conforme a rolagem */
+@supports (animation-timeline: view()) {
+  .reveal-card {
+    animation: card-in linear both;
+    animation-timeline: view();
+    animation-range: entry 0% cover 34%;
+  }
+
+  .reveal-card:nth-child(4n + 2) {
+    animation-range: entry 6% cover 40%;
+  }
+
+  .reveal-card:nth-child(4n + 3) {
+    animation-range: entry 12% cover 46%;
+  }
+
+  .reveal-card:nth-child(4n + 4) {
+    animation-range: entry 18% cover 52%;
+  }
+
+  @keyframes card-in {
+    from {
+      transform: translateY(90px) scale(0.96);
+    }
+    to {
+      transform: none;
+    }
+  }
+}
+
+::view-transition {
+  pointer-events: none;
+}
+
+/* Saída e entrada se sobrepõem: a página nova está inteira em ~0,5s (antes ~0,9s). */
+::view-transition-old(.page-exit) {
+  animation: page-out 200ms var(--ease-in-out) both;
+}
+
+::view-transition-new(.page-enter) {
+  animation: page-in 460ms var(--ease-expo) 60ms both;
+}
+
+/* Sem filter: blur nas capturas de tela cheia, que é o que travava os quadros. */
+@keyframes page-out {
+  to {
+    opacity: 0;
+    transform: translateY(-28px);
+  }
+}
+
+@keyframes page-in {
+  from {
+    opacity: 0;
+    transform: translateY(48px);
+  }
+}
+
+::view-transition-group(site-header) {
+  animation: none;
+  z-index: 100;
+}
+
+::view-transition-old(site-header) {
+  display: none;
+}
+
+::view-transition-new(site-header) {
+  animation: none;
+}
+
+::view-transition-group(.morph) {
+  animation-duration: 600ms;
+  animation-timing-function: var(--ease-in-out);
+}
+
+/* Card 3:4 e galeria 4:5: as duas capturas cobrem o grupo sem esticar. */
+::view-transition-old(.morph),
+::view-transition-new(.morph) {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .reveal-card {
+    animation: none !important;
+    transform: none !important;
+  }
+
+  ::view-transition-old(*),
+  ::view-transition-new(*),
+  ::view-transition-group(*) {
+    animation-duration: 0s !important;
+    animation-delay: 0s !important;
+  }
+}

@@ -1,0 +1,22 @@
+node_modules
+.next
+out
+.vercel
+*.log
+.DS_Store
+next-env.d.ts
+
+# Variáveis de ambiente e credenciais
+.env
+.env*.local
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+
+# Cache de build do TypeScript
+*.tsbuildinfo
+
+# Configuração local de ferramentas
+.claude/
