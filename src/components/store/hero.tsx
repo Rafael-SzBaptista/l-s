@@ -8,7 +8,6 @@ import { easeInOut } from "@/components/motion/ease";
 import { useIntroDone } from "@/components/motion/intro-state";
 import { buttonOnPhoto } from "@/lib/ui";
 import { AnimatePresence, motion, useScroll, useTransform } from "motion/react";
-import { ArrowLeft, ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
@@ -20,7 +19,7 @@ const slides = [
     src: "/catalogo/hero-rasteira.jpg",
     alt: "Rasteira café de dedo com placa dourada martelada.",
     position: "center 55%",
-    eyebrow: "01 — O passo",
+    label: "O passo",
     title: "Nada por acaso.",
     text: "Cada detalhe pensado para o seu passo.",
     href: "/colecao",
@@ -31,7 +30,7 @@ const slides = [
     src: "/catalogo/hero-scarpin.jpg",
     alt: "Scarpin slingback preto com bolsa preta de corrente.",
     position: "center 70%",
-    eyebrow: "02 — A noite",
+    label: "A noite",
     title: "O salto fino.",
     text: "Quando o dia acaba, o passo fica aberto.",
     href: "/produto/scarpin-slingback-preto",
@@ -42,7 +41,7 @@ const slides = [
     src: "/catalogo/hero-bloco.jpg",
     alt: "Sandália caramelo de salto bloco, com a modelo segurando uma bolsa.",
     position: "center 72%",
-    eyebrow: "03 — O bloco",
+    label: "O bloco",
     title: "Conforto e modernidade.",
     text: "Uma coleção feita a partir do que fica.",
     href: "/produto/sandalia-bloco-caramelo",
@@ -141,13 +140,12 @@ export function Hero() {
         className="pointer-events-none absolute inset-0 z-10 flex flex-col justify-end px-5 pt-[var(--top-h)] pb-6 md:px-10 md:pb-10"
       >
         <div className="pointer-events-auto max-w-4xl">
-          <p className="eyebrow text-white/75">{slide.eyebrow}</p>
           <SplitText
             key={slide.id}
             as="h1"
             text={slide.title}
             play={introDone}
-            className="font-wide mt-4 text-[clamp(2.7rem,6.2vw,6.2rem)] text-white"
+            className="font-wide text-[clamp(2.7rem,6.2vw,6.2rem)] text-white"
           />
           <Reveal>
             <p className="mt-5 max-w-xl text-base text-white/85 md:text-lg">{slide.text}</p>
@@ -158,13 +156,13 @@ export function Hero() {
             </Link>
           </Magnetic>
         </div>
-        <div className="pointer-events-auto mt-8 flex items-center justify-between gap-6">
+        <div className="pointer-events-auto mt-8 flex items-center gap-6">
           <div className="flex items-center gap-3">
             {slides.map((item, itemIndex) => (
               <button
                 key={item.id}
                 type="button"
-                aria-label={item.eyebrow}
+                aria-label={`Slide: ${item.label}`}
                 data-cursor=""
                 className="h-px w-14 bg-white/30 md:w-20"
                 onClick={() => go(itemIndex)}
@@ -174,26 +172,6 @@ export function Hero() {
                 ) : null}
               </button>
             ))}
-          </div>
-          <div className="flex gap-2">
-            <button
-              type="button"
-              aria-label="Slide anterior"
-              data-cursor=""
-              className="grid h-12 w-12 place-items-center border border-white/40"
-              onClick={() => go(index - 1)}
-            >
-              <ArrowLeft strokeWidth={1.5} className="h-4 w-4" />
-            </button>
-            <button
-              type="button"
-              aria-label="Próximo slide"
-              data-cursor=""
-              className="grid h-12 w-12 place-items-center border border-white/40"
-              onClick={() => go(index + 1)}
-            >
-              <ArrowRight strokeWidth={1.5} className="h-4 w-4" />
-            </button>
           </div>
         </div>
       </motion.div>

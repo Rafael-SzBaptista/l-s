@@ -111,8 +111,7 @@ export function HorizontalLooks() {
         <div className="sticky top-0 flex h-[100svh] flex-col justify-center overflow-hidden">
           <div className="mb-8 flex items-end justify-between px-8 xl:px-12">
             <div>
-              <p className="eyebrow">02 — Sequência</p>
-              <h2 id="passos-title" className="font-wide mt-4 text-[clamp(3rem,6vw,5.5rem)]">
+              <h2 id="passos-title" className="font-wide text-[clamp(3rem,6vw,5.5rem)]">
                 Os passos
               </h2>
             </div>
@@ -135,8 +134,7 @@ export function HorizontalLooks() {
         </div>
       </div>
       <div className="px-5 py-20 lg:hidden">
-        <p className="eyebrow">02 — Sequência</p>
-        <h2 className="font-wide mt-4 text-5xl">Os passos</h2>
+        <h2 className="font-wide text-5xl">Os passos</h2>
         <div
           data-lenis-prevent
           className="no-scrollbar mt-8 flex snap-x snap-mandatory gap-4 overflow-x-auto pb-4"

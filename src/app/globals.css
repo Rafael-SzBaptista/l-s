@@ -263,28 +263,6 @@ html[data-intro="done"] .intro-layer {
   animation-play-state: paused;
 }
 
-.acc-icon {
-  transition: transform 0.55s var(--ease-out);
-}
-
-details[open] .acc-icon {
-  transform: rotate(45deg);
-}
-
-details {
-  interpolate-size: allow-keywords;
-}
-
-.acc-body {
-  overflow: hidden;
-  block-size: 0;
-  transition: block-size 0.55s var(--ease-out);
-}
-
-details[open] .acc-body {
-  block-size: auto;
-}
-
 /* Cards entram conforme a rolagem */
 @supports (animation-timeline: view()) {
   .reveal-card {

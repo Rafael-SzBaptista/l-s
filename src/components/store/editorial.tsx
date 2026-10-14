@@ -7,10 +7,9 @@ import Link from "next/link";
 export function Manifesto() {
   return (
     <section id="manifesto" className="px-5 py-[18vh] md:px-16 md:py-[22vh]">
-      <p className="eyebrow">01 — Manifesto</p>
       <ScrollWords
         text="Nada por acaso. Cada detalhe pensado para o seu passo. Uma coleção feita a partir de conforto e modernidade."
-        className="font-wide mt-8 max-w-6xl text-[clamp(2.1rem,5.4vw,5rem)]"
+        className="font-wide max-w-6xl text-[clamp(2.1rem,5.4vw,5rem)]"
       />
     </section>
   );
@@ -28,9 +27,8 @@ export function Editorial() {
         position="center 70%"
       />
       <div className="flex flex-col justify-end lg:col-span-5 lg:py-10">
-        <p className="eyebrow">04 — Editorial</p>
         <Reveal>
-          <h2 className="font-wide mt-5 text-[clamp(2.8rem,5vw,4.8rem)]">
+          <h2 className="font-wide text-[clamp(2.8rem,5vw,4.8rem)]">
             O passo que fica.
           </h2>
         </Reveal>

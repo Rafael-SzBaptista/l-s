@@ -9,11 +9,10 @@ export function ProductBand() {
     <section className="px-5 py-24 md:px-10 md:py-36" aria-labelledby="chegados-title">
       <div className="mb-12 flex items-end justify-between gap-6">
         <div>
-          <p className="eyebrow">03 — Vitrine</p>
           <SplitText
             as="h2"
             text="Recém-chegados"
-            className="font-wide mt-4 text-[clamp(3rem,7vw,6rem)]"
+            className="font-wide text-[clamp(3rem,7vw,6rem)]"
           />
         </div>
         <Link href="/colecao" data-cursor="Abrir" className="group hidden font-mono text-[0.68rem] uppercase tracking-[0.18em] md:inline-flex">

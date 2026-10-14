@@ -70,9 +70,15 @@ async function lerEventos(resposta: Response, tratar: (nome: string, dados: unkn
   }
 }
 
+/**
+ * O agente manda o caminho relativo à raiz dele ("sapatos/ls-0019.jpg").
+ * Sem a barra, o navegador procurava a foto a partir da página aberta
+ * (/colecao/sapatos/...) e dava 404. URLs completas passam direto.
+ */
 function imagemDe(src?: string) {
   if (!src) return "";
-  return src.startsWith("/") ? `/agente${src}` : src;
+  if (/^(https?:|data:|blob:)/.test(src)) return src;
+  return `/agente/${src.replace(/^\/+/, "")}`;
 }
 
 /** Negrito com um asterisco de cada lado e links clicáveis, como a Lés escreve. */
