@@ -38,7 +38,7 @@ export function CollectionBrowser() {
     <div>
       <div
         ref={barRef}
-        className="sticky-under-header -mx-5 mb-12 bg-surface/90 px-5 backdrop-blur md:-mx-10 md:px-10">
+        className="sticky-under-header -mx-5 mb-12 bg-surface/95 px-5 md:-mx-10 md:px-10">
         {/* Entrada: os filtros sobem em sequência depois do título, e a linha
             de baixo se desenha da esquerda para a direita. */}
         <motion.div

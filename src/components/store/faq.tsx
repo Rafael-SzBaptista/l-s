@@ -107,7 +107,7 @@ function AccordionItem({
 export function Faq() {
   return (
     <section className="px-5 py-24 md:px-10 md:py-32">
-      <h2 className="font-wide mb-10 text-[clamp(2.8rem,6vw,5rem)]">Perguntas da coleção</h2>
+      <h2 className="font-wide mb-10 text-[clamp(1.9rem,9vw,2.6rem)] md:text-[clamp(2.8rem,6vw,5rem)]">Perguntas da coleção</h2>
       <Accordion entries={items} />
     </section>
   );

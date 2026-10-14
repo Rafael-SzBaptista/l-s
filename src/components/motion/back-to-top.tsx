@@ -25,7 +25,7 @@ export function BackToTop() {
           layout
           type="button"
           aria-label="Voltar ao topo"
-          className="relative grid h-14 w-14 place-items-center rounded-full bg-surface/85 text-ink backdrop-blur-sm"
+          className="relative grid h-14 w-14 place-items-center rounded-full bg-surface/95 text-ink"
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: 16 }}

@@ -7,7 +7,7 @@ import { SplitText } from "@/components/motion/reveal";
 import { easeInOut } from "@/components/motion/ease";
 import { useIntroDone } from "@/components/motion/intro-state";
 import { buttonOnPhoto } from "@/lib/ui";
-import { AnimatePresence, motion, useScroll, useTransform } from "motion/react";
+import { AnimatePresence, motion, useInView, useScroll, useTransform } from "motion/react";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
@@ -54,7 +54,10 @@ export function Hero() {
   const introDone = useIntroDone();
   const [index, setIndex] = useState(0);
   const [previous, setPrevious] = useState(0);
-  const [paused, setPaused] = useState(false);
+  const [hovered, setHovered] = useState(false);
+  // Fora da tela o carrossel não gira: evita trocas de slide e animações escondidas.
+  const visible = useInView(ref);
+  const paused = hovered || !visible;
   const dragX = useRef<number | null>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -88,8 +91,8 @@ export function Hero() {
       data-hero
       data-cursor="Arrastar"
       className={`relative h-[100svh] overflow-hidden bg-surface text-white ${paused ? "hero-paused" : ""}`}
-      onMouseEnter={() => setPaused(true)}
-      onMouseLeave={() => setPaused(false)}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
       onPointerDown={(event) => {
         dragX.current = event.clientX;
       }}
@@ -145,7 +148,7 @@ export function Hero() {
             as="h1"
             text={slide.title}
             play={introDone}
-            className="font-wide text-[clamp(2.7rem,6.2vw,6.2rem)] text-white"
+            className="font-wide text-[clamp(2rem,10.5vw,2.7rem)] text-white md:text-[clamp(2.7rem,6.2vw,6.2rem)]"
           />
           <Reveal>
             <p className="mt-5 max-w-xl text-base text-white/85 md:text-lg">{slide.text}</p>

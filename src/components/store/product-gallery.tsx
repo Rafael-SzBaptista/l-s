@@ -62,6 +62,7 @@ export function ProductGallery({ product }: { product: Product }) {
                 alt=""
                 fill
                 sizes="64px"
+                loading="eager"
                 className="campaign-photo object-cover"
                 style={{ objectPosition: item.position }}
               />

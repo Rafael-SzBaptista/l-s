@@ -35,7 +35,7 @@ export default function AboutPage() {
         <SplitText
           as="h1"
           text="Depois de décadas."
-          className="font-wide mt-4 max-w-5xl text-[clamp(3.4rem,8vw,7.4rem)]"
+          className="font-wide mt-4 max-w-5xl text-[clamp(2.4rem,8vw,7.4rem)]"
         />
       </section>
       <section className="grid items-center gap-12 px-5 py-24 md:px-16 md:py-32 lg:grid-cols-12 lg:gap-16">
@@ -79,7 +79,7 @@ export default function AboutPage() {
         />
         <Reveal>
           <p className="eyebrow">A noite</p>
-          <h2 className="font-wide mt-4 text-[clamp(2.6rem,5vw,4.5rem)]">
+          <h2 className="font-wide mt-4 text-[clamp(2.2rem,5vw,4.5rem)]">
             Uma coleção feita a partir de conforto e modernidade.
           </h2>
           <p className="mt-6 max-w-md text-lg leading-relaxed text-muted">

@@ -1,5 +1,5 @@
 import type { CSSProperties } from "react";
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Archivo, Geist, Geist_Mono, Pinyon_Script } from "next/font/google";
 import Script from "next/script";
 import { Cursor } from "@/components/motion/cursor";
@@ -40,6 +40,12 @@ const script = Pinyon_Script({
   display: "swap",
   variable: "--font-pinyon",
 });
+
+export const viewport: Viewport = {
+  themeColor: "#0a0a0a",
+  colorScheme: "dark",
+  viewportFit: "cover",
+};
 
 export const metadata: Metadata = {
   title: {

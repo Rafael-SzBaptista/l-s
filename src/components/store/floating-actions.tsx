@@ -26,7 +26,7 @@ export function FloatingActions() {
 
   return (
     <>
-      <div className="fixed right-5 bottom-5 z-[65] flex items-center gap-3 md:right-8 md:bottom-8">
+      <div className="fixed right-[max(1.25rem,env(safe-area-inset-right))] bottom-[max(1.25rem,env(safe-area-inset-bottom))] z-[65] flex items-center gap-3 md:right-8 md:bottom-8">
         <motion.button
           layout
           type="button"

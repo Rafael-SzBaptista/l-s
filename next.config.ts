@@ -8,6 +8,15 @@ const agente = (
 
 const nextConfig: NextConfig = {
   agentRules: false,
+  images: {
+    formats: ["image/avif", "image/webp"],
+    minimumCacheTTL: 60 * 60 * 24 * 365,
+    deviceSizes: [360, 480, 640, 828, 1080, 1440, 1920],
+    qualities: [60, 75, 85],
+  },
+  experimental: {
+    optimizePackageImports: ["motion", "lucide-react", "@react-three/drei"],
+  },
   async rewrites() {
     return [{ source: "/agente/:path*", destination: `${agente}/:path*` }];
   },

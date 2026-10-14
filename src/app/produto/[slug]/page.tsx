@@ -38,7 +38,7 @@ export default async function ProductPage({ params }: Props) {
           <SplitText
             as="h1"
             text={product.name}
-            className="font-wide mt-3 text-[clamp(3rem,6vw,5.4rem)]"
+            className="font-wide mt-3 text-[clamp(2.2rem,6vw,5.4rem)]"
           />
           <p className="mt-6 font-mono text-xl">{formatPrice(product.price)}</p>
           <p className="mt-6 max-w-md text-lg leading-relaxed text-muted">{product.description}</p>
@@ -50,7 +50,7 @@ export default async function ProductPage({ params }: Props) {
       </div>
       <section className="mt-28">
         <p className="eyebrow">Continua</p>
-        <h2 className="font-wide mt-4 mb-10 text-[clamp(2.6rem,5vw,4.5rem)]">Outras peças</h2>
+        <h2 className="font-wide mt-4 mb-10 text-[clamp(2.2rem,5vw,4.5rem)]">Outras peças</h2>
         <div className="grid grid-cols-1 gap-x-5 gap-y-14 sm:grid-cols-2 xl:grid-cols-3">
           {related.map((item) => (
             <ProductCard key={item.slug} product={item} />

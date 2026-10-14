@@ -292,21 +292,22 @@ function TouchScrollFix() {
   return null;
 }
 
-export default function SandalScene() {
+export default function SandalScene({ active = true }: { active?: boolean }) {
   return (
     <Canvas
-      dpr={[1, 2]}
+      // Fora da tela o laço de render para: a GPU fica livre para a rolagem.
+      frameloop={active ? "always" : "never"}
+      dpr={[1, 1.5]}
       camera={{ position: [3.3, 2, 3.5], fov: 30 }}
-      gl={{ antialias: true, alpha: true }}
-      shadows
+      gl={{ antialias: true, alpha: true, powerPreference: "high-performance" }}
     >
       <ambientLight intensity={0.35} />
-      <directionalLight position={[3, 5, 2]} intensity={1.6} castShadow />
+      <directionalLight position={[3, 5, 2]} intensity={1.6} />
       <Float speed={1.4} rotationIntensity={0.25} floatIntensity={0.6}>
         <Sandal />
       </Float>
       <ContactShadows position={[0, -0.85, 0]} opacity={0.55} scale={6} blur={2.6} far={2} />
-      <Environment resolution={256}>
+      <Environment resolution={128}>
         {/* Fundo morno no reflexo: sem ele o metal espelha preto. */}
         <color attach="background" args={["#3a3027"]} />
         <Lightformer form="rect" intensity={2} position={[0, 1, 5]} scale={[8, 3, 1]} />

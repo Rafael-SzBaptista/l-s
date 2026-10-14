@@ -12,7 +12,7 @@ export function ProductBand() {
           <SplitText
             as="h2"
             text="Recém-chegados"
-            className="font-wide text-[clamp(3rem,7vw,6rem)]"
+            className="font-wide text-[clamp(2.4rem,7vw,6rem)]"
           />
         </div>
         <Link href="/colecao" data-cursor="Abrir" className="group hidden font-mono text-[0.68rem] uppercase tracking-[0.18em] md:inline-flex">

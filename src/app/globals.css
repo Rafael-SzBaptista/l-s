@@ -132,9 +132,6 @@ summary::-webkit-details-marker {
   scroll-margin-top: calc(var(--header-h) + 1.5rem);
 }
 
-.campaign-photo {
-  filter: contrast(1.05) saturate(0.9);
-}
 
 .grain {
   position: fixed;
@@ -142,6 +139,7 @@ summary::-webkit-details-marker {
   z-index: 60;
   pointer-events: none;
   opacity: 0.045;
+  transform: translateZ(0);
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   background-size: 180px 180px;
 }
@@ -183,9 +181,8 @@ html[data-intro="done"] .intro-layer {
 }
 
 /*
- * O topo anima por `top`, igual à barra .sticky-under-header: as duas
- * transições andam no mesmo quadro. Com transform no topo e top na barra,
- * elas dessincronizavam e abria uma fresta piscando entre as duas.
+ * O topo e a barra .sticky-under-header se mexem por transform (compositor, sem
+ * recalcular layout) com a mesma duração e curva, então andam no mesmo quadro.
  */
 .site-top {
   position: fixed;
@@ -193,20 +190,23 @@ html[data-intro="done"] .intro-layer {
   right: 0;
   left: 0;
   z-index: 50;
-  transition: top 0.7s var(--ease-out);
+  transform: translate3d(0, 0, 0);
+  transition: transform 0.6s var(--ease-out);
+  will-change: transform;
 }
 
 .site-top[data-scrolled="true"] {
-  top: calc(var(--announce-h) * -1);
+  transform: translate3d(0, calc(var(--announce-h) * -1), 0);
 }
 
 .site-top[data-hidden="true"] {
-  top: calc(var(--top-h) * -1);
+  transform: translate3d(0, calc(var(--top-h) * -1), 0);
 }
 
 .announce,
 .site-header {
   background: rgba(10, 10, 10, 0.92);
+  transition: background-color 0.4s var(--ease-out);
 }
 
 /* Altura exata: o conteúdo dava 35,88px e sobrava 0,12px de fresta. */
@@ -244,15 +244,16 @@ html[data-intro="done"] .intro-layer {
   position: sticky;
   top: calc(var(--top-h) - 1px);
   z-index: 30;
-  transition: top 0.7s var(--ease-out);
+  transition: transform 0.6s var(--ease-out);
+  will-change: transform;
 }
 
 .site-top[data-scrolled="true"] ~ main .sticky-under-header {
-  top: calc(var(--header-h) - 1px);
+  transform: translate3d(0, calc(var(--announce-h) * -1), 0);
 }
 
 .site-top[data-hidden="true"] ~ main .sticky-under-header {
-  top: 0;
+  transform: translate3d(0, calc(var(--top-h) * -1 + 1px), 0);
 }
 
 @keyframes kenburns {
