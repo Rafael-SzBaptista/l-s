@@ -117,7 +117,7 @@ function Balao({ de, children, erro }: { de: Mensagem["de"]; children: ReactNode
 
 function Cartoes({ sapatos }: { sapatos: Sapato[] }) {
   return (
-    <div data-lenis-prevent className="-mx-6 flex gap-3 overflow-x-auto px-6 pb-1">
+    <div data-lenis-prevent className="thin-scrollbar -mx-6 flex gap-3 overflow-x-auto px-6 pb-2">
       {sapatos.map((s, i) => (
         <div key={s.codigo ?? i} className="w-40 shrink-0 border border-line">
           {s.imagem ? (
@@ -234,7 +234,7 @@ export function AgentChat({ open, onClose }: { open: boolean; onClose: () => voi
               </button>
             </div>
 
-            <div ref={lista} data-lenis-prevent className="flex-1 space-y-3 overflow-y-auto px-6 py-6 text-[0.95rem] leading-relaxed">
+            <div ref={lista} data-lenis-prevent className="thin-scrollbar flex-1 space-y-3 overflow-y-auto px-6 py-6 text-[0.95rem] leading-relaxed">
               <Balao de="les">{SAUDACAO}</Balao>
               {mensagens.map((m, i) => {
                 const ultima = i === mensagens.length - 1;

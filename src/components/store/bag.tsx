@@ -131,7 +131,7 @@ export function BagDrawer() {
                 <X strokeWidth={1.5} />
               </button>
             </div>
-            <ul data-lenis-prevent className="flex-1 space-y-6 overflow-y-auto px-6 py-6">
+            <ul data-lenis-prevent className="thin-scrollbar flex-1 space-y-6 overflow-y-auto px-6 py-6">
               <AnimatePresence initial={false}>
                 {bag.lines.length === 0 ? (
                   <motion.li

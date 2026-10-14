@@ -38,12 +38,26 @@ export function SiteTop() {
     let frame = 0;
     let last = window.scrollY;
 
+    // Só troca de estado após um deslocamento acumulado na mesma direção:
+    // o fim da rolagem suave gera oscilações de poucos px que faziam a barra piscar.
+    let travel = 0;
+    let hidden = false;
+
     const update = () => {
       const y = window.scrollY;
-      const down = y > last;
-      el.dataset.scrolled = y > 24 ? "true" : "false";
-      el.dataset.hidden = down && y > 240 && !menu && !search ? "true" : "false";
+      const delta = y - last;
       last = y;
+      el.dataset.scrolled = y > 24 ? "true" : "false";
+
+      if (menu || search || y <= 240) {
+        hidden = false;
+        travel = 0;
+      } else if (delta !== 0) {
+        travel = Math.sign(delta) === Math.sign(travel) ? travel + delta : delta;
+        if (travel > 12) hidden = true;
+        else if (travel < -40) hidden = false;
+      }
+      el.dataset.hidden = hidden ? "true" : "false";
     };
 
     const onScroll = () => {
