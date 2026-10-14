@@ -40,7 +40,6 @@ export const categories: Array<"Todos" | Category> = [
 
 // Catálogo Primavera-Verão 2026/27. O catálogo traz só o tipo de cada peça
 // ("Papete", "Tênis"…); os nomes de modelo abaixo foram dados a partir da foto.
-const PRICE = 250;
 const SIZES = ["34", "35", "36", "37", "38", "39"];
 
 const STEP: Record<Category, string> = {
@@ -56,6 +55,7 @@ const STEP: Record<Category, string> = {
 type Seed = {
   slug: string;
   name: string;
+  price: number;
   category: Category;
   summary: string;
   description: string;
@@ -69,7 +69,7 @@ function make(seed: Seed): Product {
   return {
     slug: seed.slug,
     name: seed.name,
-    price: PRICE,
+    price: seed.price,
     category: seed.category,
     summary: seed.summary,
     description: seed.description,
@@ -97,7 +97,8 @@ function make(seed: Seed): Product {
 export const products: Product[] = [
   make({
     slug: "papete-flor-prata",
-    name: "Papete Flor Prata",
+    name: "Papete prata com flores",
+    price: 219.9,
     category: "Papetes",
     summary: "Prata metalizada com flores aplicadas.",
     description: "Tiras largas em prata metalizada, cada uma com uma flor em relevo. O brilho fica no detalhe, não no par inteiro.",
@@ -109,7 +110,8 @@ export const products: Product[] = [
   }),
   make({
     slug: "papete-cabochao-terracota",
-    name: "Papete Cabochão Terracota",
+    name: "Papete terracota com tachas",
+    price: 199.9,
     category: "Papetes",
     summary: "Duas tiras terracota com cabochões.",
     description: "Duas tiras em terracota com cabochões redondos e tira no calcanhar. A base marrom deixa a cor da tira aparecer.",
@@ -120,7 +122,8 @@ export const products: Product[] = [
   }),
   make({
     slug: "mocassim-cabochao-terracota",
-    name: "Mocassim Cabochão",
+    name: "Mocassim terracota com pedras",
+    price: 289.9,
     category: "Fechados",
     summary: "Mocassim terracota com cabochões no peito do pé.",
     description: "Bico quadrado e cabochões na frente, no mesmo tom da papete. Fechado para os dias de vento, sem perder a cor.",
@@ -129,7 +132,8 @@ export const products: Product[] = [
   }),
   make({
     slug: "papete-h-coral",
-    name: "Papete H Coral",
+    name: "Papete recorte H terracota",
+    price: 189.9,
     category: "Papetes",
     summary: "Tiras em H no tom coral.",
     description: "A tira em H abraça o peito do pé e a cor coral esquenta o look de linho e algodão.",
@@ -137,7 +141,8 @@ export const products: Product[] = [
   }),
   make({
     slug: "papete-h-off-white",
-    name: "Papete H Off-White",
+    name: "Papete recorte H bege e preta",
+    price: 189.9,
     category: "Papetes",
     summary: "Tiras em H em off-white.",
     description: "A mesma tira em H em off-white e base preta: contraste limpo que vai bem com calça escura.",
@@ -145,7 +150,8 @@ export const products: Product[] = [
   }),
   make({
     slug: "rasteirinha-fio-metalizado",
-    name: "Rasteirinha Fio Metalizado",
+    name: "Rasteirinha prata de tira fina",
+    price: 149.9,
     category: "Rasteirinhas",
     summary: "Fios finos de dedo, em prata e dourado.",
     description: "Fios finos entre os dedos e no tornozelo, com acabamento metalizado. Quase some no pé, de propósito.",
@@ -157,7 +163,8 @@ export const products: Product[] = [
   }),
   make({
     slug: "clog-trama-cafe",
-    name: "Clog Trama Café",
+    name: "Clog trançado marrom e dourado",
+    price: 239.9,
     category: "Fechados",
     summary: "Clog em trama café com dourado.",
     description: "Trama de tiras café com fios dourados e calcanhar livre. Um fechado que respira.",
@@ -169,7 +176,8 @@ export const products: Product[] = [
   }),
   make({
     slug: "papete-cristais-caramelo",
-    name: "Papete Cristais Caramelo",
+    name: "Papete caramelo com pedras coloridas",
+    price: 229.9,
     category: "Papetes",
     summary: "Caramelo com cristais coloridos e fivela.",
     description: "Base e tiras caramelo com cristais coloridos aplicados e fivela dourada. Brilho de dia, sem pedir ocasião.",
@@ -180,7 +188,8 @@ export const products: Product[] = [
   }),
   make({
     slug: "tenis-faixa-terracota",
-    name: "Tênis Faixa Terracota",
+    name: "Tênis retrô laranja",
+    price: 349.9,
     category: "Tênis",
     summary: "Tênis terracota com faixas laterais claras.",
     description: "Terracota, faixas laterais em tom claro e solado de borracha. Retrô na medida.",
@@ -188,7 +197,8 @@ export const products: Product[] = [
   }),
   make({
     slug: "tenis-onca",
-    name: "Tênis Onça",
+    name: "Tênis off-white com onça",
+    price: 379.9,
     category: "Tênis",
     summary: "Off-white com detalhe vermelho e onça.",
     description: "Cabedal off-white, recorte vermelho e calcanhar em estampa de onça. O tênis que conversa com o resto do armário.",
@@ -196,7 +206,8 @@ export const products: Product[] = [
   }),
   make({
     slug: "tamanco-salto-noite",
-    name: "Tamanco Salto Noite",
+    name: "Tamanco preto de salto",
+    price: 269.9,
     category: "Tamancos",
     summary: "Preto, tira no peito do pé e salto escultural.",
     description: "Tira preta cruzada e salto escultural médio. Da reunião ao jantar sem trocar de par.",
@@ -204,7 +215,8 @@ export const products: Product[] = [
   }),
   make({
     slug: "tamanco-dourado",
-    name: "Tamanco Dourado",
+    name: "Tamanco dourado de salto bloco",
+    price: 259.9,
     category: "Tamancos",
     summary: "Dourado de salto baixo e bico aberto.",
     description: "Dourado suave, bico aberto e salto bloco baixo. O metal vira neutro.",
@@ -212,7 +224,8 @@ export const products: Product[] = [
   }),
   make({
     slug: "tenis-branco-areia",
-    name: "Tênis Branco Areia",
+    name: "Tênis branco com camurça bege",
+    price: 399.9,
     category: "Tênis",
     summary: "Branco com recortes em areia.",
     description: "Base branca, recortes em areia e solado alto na medida. O tênis branco que não é só branco.",
@@ -224,7 +237,8 @@ export const products: Product[] = [
   }),
   make({
     slug: "tenis-retro-creme",
-    name: "Tênis Retrô Creme",
+    name: "Tênis creme com listras rosé",
+    price: 369.9,
     category: "Tênis",
     summary: "Creme com faixas e biqueira bege.",
     description: "Creme, faixas laterais e biqueira bege, sobre solado de borracha clara.",
@@ -236,7 +250,8 @@ export const products: Product[] = [
   }),
   make({
     slug: "tenis-perfurado-nude",
-    name: "Tênis Perfurado Nude",
+    name: "Tênis bege perfurado",
+    price: 359.9,
     category: "Tênis",
     summary: "Nude com cabedal perfurado.",
     description: "Cabedal nude perfurado, que deixa o pé respirar, e cadarço no mesmo tom.",
@@ -247,7 +262,8 @@ export const products: Product[] = [
   }),
   make({
     slug: "sandalia-pelo-onca",
-    name: "Sandália Pelo Onça",
+    name: "Sandália de salto com estampa de poá",
+    price: 279.9,
     category: "Sandálias",
     summary: "Estampa de onça e salto bloco.",
     description: "Tiras com textura de pelo e estampa de onça, tornozeleira e salto bloco. A peça que muda o look.",
@@ -256,7 +272,8 @@ export const products: Product[] = [
   }),
   make({
     slug: "sandalia-bloco-caramelo",
-    name: "Sandália Bloco Caramelo",
+    name: "Sandália caramelo de salto bloco",
+    price: 249.9,
     category: "Sandálias",
     summary: "Caramelo, fivela no tornozelo e salto bloco.",
     description: "Caramelo, tira no tornozelo com fivela e salto bloco médio. O conforto do bloco com cara de ocasião.",
@@ -268,7 +285,8 @@ export const products: Product[] = [
   }),
   make({
     slug: "scarpin-cafe",
-    name: "Scarpin Café",
+    name: "Scarpin marrom café",
+    price: 329.9,
     category: "Scarpins",
     summary: "Scarpin de bico fino, café.",
     description: "Bico fino, salto médio desenhado e acabamento café brilhante. Clássico que não envelhece.",
@@ -279,7 +297,8 @@ export const products: Product[] = [
   }),
   make({
     slug: "sandalia-tira-cafe",
-    name: "Sandália Tira Café",
+    name: "Sandália de salto fino marrom café",
+    price: 299.9,
     category: "Sandálias",
     summary: "Tira fina no tornozelo e salto escultural.",
     description: "Tira frontal, tornozeleira fina e salto escultural, em café.",
@@ -290,7 +309,8 @@ export const products: Product[] = [
   }),
   make({
     slug: "sandalia-tachas-ouro",
-    name: "Sandália Tachas Ouro",
+    name: "Rasteirinha dourada com tachas",
+    price: 169.9,
     category: "Sandálias",
     summary: "Rasteira de dedo com tachas douradas.",
     description: "Tiras douradas de dedo com tachas pirâmide e base caramelo. Plana, para o passo do dia todo.",
@@ -302,7 +322,8 @@ export const products: Product[] = [
   }),
   make({
     slug: "sandalia-pedras-bronze",
-    name: "Sandália Pedras Bronze",
+    name: "Rasteirinha marrom com bolas douradas",
+    price: 179.9,
     category: "Sandálias",
     summary: "Bronze com pedras douradas aplicadas.",
     description: "Tiras em bronze com pedras douradas grandes e tira no calcanhar.",
@@ -313,7 +334,8 @@ export const products: Product[] = [
   }),
   make({
     slug: "scarpin-slingback-preto",
-    name: "Scarpin Slingback Preto",
+    name: "Scarpin slingback preto",
+    price: 289.9,
     category: "Scarpins",
     summary: "Slingback preto de salto kitten.",
     description: "Bico fino, tira no calcanhar e salto baixo kitten. Elegante sem cansar.",
@@ -321,7 +343,8 @@ export const products: Product[] = [
   }),
   make({
     slug: "sandalia-tachas-preta",
-    name: "Sandália Tachas Preta",
+    name: "Sandália preta com rebites",
+    price: 219.9,
     category: "Sandálias",
     summary: "Preta de salto baixo com tachas.",
     description: "Tiras pretas com tachas, salto bloco baixo e tornozeleira. O lançamento da coleção.",
@@ -329,7 +352,8 @@ export const products: Product[] = [
   }),
   make({
     slug: "papete-gota-dourada",
-    name: "Papete Gota Dourada",
+    name: "Papete marrom com metais dourados",
+    price: 239.9,
     category: "Papetes",
     summary: "Café com metal dourado orgânico.",
     description: "Duas tiras café com uma peça de metal dourado em forma orgânica em cada uma.",
@@ -341,7 +365,8 @@ export const products: Product[] = [
   }),
   make({
     slug: "mule-trama-rose",
-    name: "Mule Trama Rosé",
+    name: "Mule trançado dourado",
+    price: 229.9,
     category: "Fechados",
     summary: "Mule em trama metalizada rosé.",
     description: "Trama metalizada em rosé dourado, bico fino e calcanhar livre.",
@@ -353,7 +378,8 @@ export const products: Product[] = [
   }),
   make({
     slug: "papete-corrente-ouro",
-    name: "Papete Corrente Ouro",
+    name: "Papete dourada com tira trabalhada",
+    price: 209.9,
     category: "Papetes",
     summary: "Dourada com tiras trançadas em corrente.",
     description: "Tiras douradas trançadas como corrente e tira no calcanhar com fivela.",
@@ -364,7 +390,8 @@ export const products: Product[] = [
   }),
   make({
     slug: "rasteirinha-pedras-verdes",
-    name: "Rasteirinha Pedras Verdes",
+    name: "Rasteirinha marrom com pedras",
+    price: 179.9,
     category: "Rasteirinhas",
     summary: "Café com pedras verdes e douradas.",
     description: "Base café com pespontos e uma tira de pedras verdes e douradas. Joia para os pés.",
@@ -375,7 +402,8 @@ export const products: Product[] = [
   }),
   make({
     slug: "sandalia-ambar",
-    name: "Sandália Âmbar",
+    name: "Sandália off-white com pedras âmbar",
+    price: 189.9,
     category: "Sandálias",
     summary: "Off-white com pedras âmbar.",
     description: "Tiras off-white com pedras âmbar e douradas, de dedo, com tira no calcanhar.",
@@ -383,7 +411,8 @@ export const products: Product[] = [
   }),
   make({
     slug: "sapatilha-trama-dourada",
-    name: "Sapatilha Trama Dourada",
+    name: "Sapatilha boneca trançada dourada",
+    price: 219.9,
     category: "Fechados",
     summary: "Boneca em trama dourada com fivela.",
     description: "Sapatilha boneca em trama dourada, com tira e fivela no peito do pé.",
@@ -394,7 +423,8 @@ export const products: Product[] = [
   }),
   make({
     slug: "rasteirinha-cruzada-ouro",
-    name: "Rasteirinha Cruzada Ouro",
+    name: "Rasteirinha dourada de tiras largas",
+    price: 159.9,
     category: "Rasteirinhas",
     summary: "Slide dourado de tiras cruzadas.",
     description: "Tiras douradas largas que se cruzam no peito do pé. Calça sem fivela.",
@@ -402,7 +432,8 @@ export const products: Product[] = [
   }),
   make({
     slug: "rasteirinha-trancada",
-    name: "Rasteirinha Trançada",
+    name: "Rasteirinha marrom com pesponto",
+    price: 139.9,
     category: "Rasteirinhas",
     summary: "Fina de dedo, com tira trançada.",
     description: "Rasteirinha de dedo com tiras trançadas em dois tons. Leve como um chinelo, arrumada como sandália.",
@@ -410,7 +441,8 @@ export const products: Product[] = [
   }),
   make({
     slug: "papete-perola",
-    name: "Papete Pérola",
+    name: "Papete off-white com pedras",
+    price: 199.9,
     category: "Papetes",
     summary: "Off-white com pedras coloridas.",
     description: "Tira larga off-white com pedras coloridas, de dedo, sobre base macia.",
@@ -418,7 +450,8 @@ export const products: Product[] = [
   }),
   make({
     slug: "papete-tachas-ouro",
-    name: "Papete Tachas Ouro",
+    name: "Papete dourada com pedras",
+    price: 229.9,
     category: "Papetes",
     summary: "Dourada com tachas e pedras.",
     description: "Tira larga dourada coberta de tachas e pedras, de dedo. Para quando o pé é o acessório.",
@@ -426,7 +459,8 @@ export const products: Product[] = [
   }),
   make({
     slug: "tamanco-tranca-dourado",
-    name: "Tamanco Trança Dourado",
+    name: "Tamanco dourado trançado",
+    price: 239.9,
     category: "Tamancos",
     summary: "Trança dourada e salto de madeira.",
     description: "Tira em trança dourada e salto de madeira baixo. Verão de cidade.",
@@ -434,7 +468,8 @@ export const products: Product[] = [
   }),
   make({
     slug: "papete-cruzada-pedras",
-    name: "Papete Cruzada Pedras",
+    name: "Papete caramelo de tiras cruzadas",
+    price: 209.9,
     category: "Papetes",
     summary: "Café com tiras cruzadas e pedras.",
     description: "Tiras café cruzadas com pedras douradas e coloridas, sobre base caramelo.",
@@ -442,7 +477,8 @@ export const products: Product[] = [
   }),
   make({
     slug: "rasteira-placa-ouro",
-    name: "Rasteira Placa Ouro",
+    name: "Rasteira caramelo com metal ondulado",
+    price: 174.9,
     category: "Rasteirinhas",
     summary: "Café com placa dourada martelada.",
     description: "Rasteira de dedo café com uma placa dourada martelada no centro.",

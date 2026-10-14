@@ -1,0 +1,326 @@
+[
+  {
+    "codigo": "LS-0011",
+    "slug": "papete-flor-prata",
+    "nomeSite": "Papete Flor Prata",
+    "nomeBanco": "Papete prata com flores",
+    "modelo": "Camélia",
+    "cor": "prata",
+    "preco": 219.9
+  },
+  {
+    "codigo": "LS-0012",
+    "slug": "mocassim-cabochao-terracota",
+    "nomeSite": "Mocassim Cabochão",
+    "nomeBanco": "Mocassim terracota com pedras",
+    "modelo": "Brasa",
+    "cor": "terracota",
+    "preco": 289.9
+  },
+  {
+    "codigo": "LS-0013",
+    "slug": "papete-cabochao-terracota",
+    "nomeSite": "Papete Cabochão Terracota",
+    "nomeBanco": "Papete terracota com tachas",
+    "modelo": "Coral",
+    "cor": "terracota",
+    "preco": 199.9
+  },
+  {
+    "codigo": "LS-0014",
+    "slug": "papete-h-coral",
+    "nomeSite": "Papete H Coral",
+    "nomeBanco": "Papete recorte H terracota",
+    "modelo": "Hera",
+    "cor": "terracota",
+    "preco": 189.9
+  },
+  {
+    "codigo": "LS-0015",
+    "slug": "papete-h-off-white",
+    "nomeSite": "Papete H Off-White",
+    "nomeBanco": "Papete recorte H bege e preta",
+    "modelo": "Areia",
+    "cor": "bege",
+    "preco": 189.9
+  },
+  {
+    "codigo": "LS-0016",
+    "slug": "rasteirinha-fio-metalizado",
+    "nomeSite": "Rasteirinha Fio Metalizado",
+    "nomeBanco": "Rasteirinha prata de tira fina",
+    "modelo": "Fio",
+    "cor": "prata",
+    "preco": 149.9
+  },
+  {
+    "codigo": "LS-0017",
+    "slug": "clog-trama-cafe",
+    "nomeSite": "Clog Trama Café",
+    "nomeBanco": "Clog trançado marrom e dourado",
+    "modelo": "Trama",
+    "cor": "marrom",
+    "preco": 239.9
+  },
+  {
+    "codigo": "LS-0018",
+    "slug": "papete-cristais-caramelo",
+    "nomeSite": "Papete Cristais Caramelo",
+    "nomeBanco": "Papete caramelo com pedras coloridas",
+    "modelo": "Joia",
+    "cor": "caramelo",
+    "preco": 229.9
+  },
+  {
+    "codigo": "LS-0019",
+    "slug": "tenis-faixa-terracota",
+    "nomeSite": "Tênis Faixa Terracota",
+    "nomeBanco": "Tênis retrô laranja",
+    "modelo": "Pista",
+    "cor": "laranja",
+    "preco": 349.9
+  },
+  {
+    "codigo": "LS-0020",
+    "slug": "tenis-onca",
+    "nomeSite": "Tênis Onça",
+    "nomeBanco": "Tênis off-white com onça",
+    "modelo": "Savana",
+    "cor": "off-white",
+    "preco": 379.9
+  },
+  {
+    "codigo": "LS-0021",
+    "slug": "tamanco-salto-noite",
+    "nomeSite": "Tamanco Salto Noite",
+    "nomeBanco": "Tamanco preto de salto",
+    "modelo": "Ônix",
+    "cor": "preto",
+    "preco": 269.9
+  },
+  {
+    "codigo": "LS-0022",
+    "slug": "tamanco-dourado",
+    "nomeSite": "Tamanco Dourado",
+    "nomeBanco": "Tamanco dourado de salto bloco",
+    "modelo": "Aurora",
+    "cor": "dourado",
+    "preco": 259.9
+  },
+  {
+    "codigo": "LS-0023",
+    "slug": "tenis-branco-areia",
+    "nomeSite": "Tênis Branco Areia",
+    "nomeBanco": "Tênis branco com camurça bege",
+    "modelo": "Nuvem",
+    "cor": "branco",
+    "preco": 399.9
+  },
+  {
+    "codigo": "LS-0024",
+    "slug": "tenis-retro-creme",
+    "nomeSite": "Tênis Retrô Creme",
+    "nomeBanco": "Tênis creme com listras rosé",
+    "modelo": "Brisa",
+    "cor": "creme",
+    "preco": 369.9
+  },
+  {
+    "codigo": "LS-0025",
+    "slug": "tenis-perfurado-nude",
+    "nomeSite": "Tênis Perfurado Nude",
+    "nomeBanco": "Tênis bege perfurado",
+    "modelo": "Duna",
+    "cor": "bege",
+    "preco": 359.9
+  },
+  {
+    "codigo": "LS-0026",
+    "slug": "sandalia-pelo-onca",
+    "nomeSite": "Sandália Pelo Onça",
+    "nomeBanco": "Sandália de salto com estampa de poá",
+    "modelo": "Pintada",
+    "cor": "marrom",
+    "preco": 279.9
+  },
+  {
+    "codigo": "LS-0027",
+    "slug": "sandalia-bloco-caramelo",
+    "nomeSite": "Sandália Bloco Caramelo",
+    "nomeBanco": "Sandália caramelo de salto bloco",
+    "modelo": "Canela",
+    "cor": "caramelo",
+    "preco": 249.9
+  },
+  {
+    "codigo": "LS-0028",
+    "slug": "scarpin-cafe",
+    "nomeSite": "Scarpin Café",
+    "nomeBanco": "Scarpin marrom café",
+    "modelo": "Café",
+    "cor": "marrom",
+    "preco": 329.9
+  },
+  {
+    "codigo": "LS-0029",
+    "slug": "sandalia-tira-cafe",
+    "nomeSite": "Sandália Tira Café",
+    "nomeBanco": "Sandália de salto fino marrom café",
+    "modelo": "Expresso",
+    "cor": "marrom",
+    "preco": 299.9
+  },
+  {
+    "codigo": "LS-0030",
+    "slug": "sandalia-tachas-ouro",
+    "nomeSite": "Sandália Tachas Ouro",
+    "nomeBanco": "Rasteirinha dourada com tachas",
+    "modelo": "Estrela",
+    "cor": "dourado",
+    "preco": 169.9
+  },
+  {
+    "codigo": "LS-0031",
+    "slug": "sandalia-pedras-bronze",
+    "nomeSite": "Sandália Pedras Bronze",
+    "nomeBanco": "Rasteirinha marrom com bolas douradas",
+    "modelo": "Pérola",
+    "cor": "marrom",
+    "preco": 179.9
+  },
+  {
+    "codigo": "LS-0032",
+    "slug": "scarpin-slingback-preto",
+    "nomeSite": "Scarpin Slingback Preto",
+    "nomeBanco": "Scarpin slingback preto",
+    "modelo": "Grafite",
+    "cor": "preto",
+    "preco": 289.9
+  },
+  {
+    "codigo": "LS-0033",
+    "slug": "sandalia-tachas-preta",
+    "nomeSite": "Sandália Tachas Preta",
+    "nomeBanco": "Sandália preta com rebites",
+    "modelo": "Rebite",
+    "cor": "preto",
+    "preco": 219.9
+  },
+  {
+    "codigo": "LS-0034",
+    "slug": "papete-gota-dourada",
+    "nomeSite": "Papete Gota Dourada",
+    "nomeBanco": "Papete marrom com metais dourados",
+    "modelo": "Ouro Velho",
+    "cor": "marrom",
+    "preco": 239.9
+  },
+  {
+    "codigo": "LS-0035",
+    "slug": "mule-trama-rose",
+    "nomeSite": "Mule Trama Rosé",
+    "nomeBanco": "Mule trançado dourado",
+    "modelo": "Rede",
+    "cor": "dourado",
+    "preco": 229.9
+  },
+  {
+    "codigo": "LS-0036",
+    "slug": "papete-corrente-ouro",
+    "nomeSite": "Papete Corrente Ouro",
+    "nomeBanco": "Papete dourada com tira trabalhada",
+    "modelo": "Sol",
+    "cor": "dourado",
+    "preco": 209.9
+  },
+  {
+    "codigo": "LS-0037",
+    "slug": "rasteirinha-pedras-verdes",
+    "nomeSite": "Rasteirinha Pedras Verdes",
+    "nomeBanco": "Rasteirinha marrom com pedras",
+    "modelo": "Amuleto",
+    "cor": "marrom",
+    "preco": 179.9
+  },
+  {
+    "codigo": "LS-0038",
+    "slug": "sandalia-ambar",
+    "nomeSite": "Sandália Âmbar",
+    "nomeBanco": "Sandália off-white com pedras âmbar",
+    "modelo": "Âmbar",
+    "cor": "off-white",
+    "preco": 189.9
+  },
+  {
+    "codigo": "LS-0039",
+    "slug": "sapatilha-trama-dourada",
+    "nomeSite": "Sapatilha Trama Dourada",
+    "nomeBanco": "Sapatilha boneca trançada dourada",
+    "modelo": "Palha",
+    "cor": "dourado",
+    "preco": 219.9
+  },
+  {
+    "codigo": "LS-0040",
+    "slug": "rasteirinha-trancada",
+    "nomeSite": "Rasteirinha Trançada",
+    "nomeBanco": "Rasteirinha marrom com pesponto",
+    "modelo": "Costura",
+    "cor": "marrom",
+    "preco": 139.9
+  },
+  {
+    "codigo": "LS-0041",
+    "slug": "rasteirinha-cruzada-ouro",
+    "nomeSite": "Rasteirinha Cruzada Ouro",
+    "nomeBanco": "Rasteirinha dourada de tiras largas",
+    "modelo": "Moldura",
+    "cor": "dourado",
+    "preco": 159.9
+  },
+  {
+    "codigo": "LS-0042",
+    "slug": "papete-perola",
+    "nomeSite": "Papete Pérola",
+    "nomeBanco": "Papete off-white com pedras",
+    "modelo": "Seixo",
+    "cor": "off-white",
+    "preco": 199.9
+  },
+  {
+    "codigo": "LS-0043",
+    "slug": "papete-tachas-ouro",
+    "nomeSite": "Papete Tachas Ouro",
+    "nomeBanco": "Papete dourada com pedras",
+    "modelo": "Tesouro",
+    "cor": "dourado",
+    "preco": 229.9
+  },
+  {
+    "codigo": "LS-0044",
+    "slug": "tamanco-tranca-dourado",
+    "nomeSite": "Tamanco Trança Dourado",
+    "nomeBanco": "Tamanco dourado trançado",
+    "modelo": "Trança",
+    "cor": "dourado",
+    "preco": 239.9
+  },
+  {
+    "codigo": "LS-0045",
+    "slug": "papete-cruzada-pedras",
+    "nomeSite": "Papete Cruzada Pedras",
+    "nomeBanco": "Papete caramelo de tiras cruzadas",
+    "modelo": "Cruz",
+    "cor": "caramelo",
+    "preco": 209.9
+  },
+  {
+    "codigo": "LS-0046",
+    "slug": "rasteira-placa-ouro",
+    "nomeSite": "Rasteira Placa Ouro",
+    "nomeBanco": "Rasteira caramelo com metal ondulado",
+    "modelo": "Onda",
+    "cor": "caramelo",
+    "preco": 174.9
+  }
+]

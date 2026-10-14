@@ -8,7 +8,7 @@ import { useId, useState } from "react";
 const items = [
   {
     title: "A coleção já está na loja?",
-    body: "Sim. A Primavera-Verão 2026/27 está na loja: papetes, rasteirinhas, sandálias, scarpins, tamancos, tênis e fechados, cada par a R$ 250,00.",
+    body: "Sim. A Primavera-Verão 2026/27 está na loja: papetes, rasteirinhas, sandálias, scarpins, tamancos, tênis e fechados, pares de R$ 139,90 a R$ 399,90.",
   },
   {
     title: "Por que o dourado se repete?",

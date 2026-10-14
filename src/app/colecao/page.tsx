@@ -17,7 +17,7 @@ export default function CollectionPage() {
         className="font-wide mt-4 text-[clamp(4rem,12vw,9rem)]"
       />
       <p className="mt-6 max-w-xl text-lg text-muted">
-        Primavera-Verão 2026/27. Do dia a dia ao casual, cada par a R$ 250,00.
+        Primavera-Verão 2026/27. Do dia a dia ao casual, pares de R$ 139,90 a R$ 399,90.
       </p>
       <div className="mt-12">
         <CollectionBrowser />
