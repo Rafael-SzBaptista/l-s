@@ -133,6 +133,10 @@ summary::-webkit-details-marker {
 }
 
 
+.campaign-photo {
+  filter: contrast(1.05) saturate(0.9);
+}
+
 .grain {
   position: fixed;
   inset: 0;
